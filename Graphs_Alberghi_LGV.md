@@ -137,13 +137,13 @@ mapp3.get_root().html.add_child(folium.Element(legend_html))
 
 ```python
 #folium does not allow to convert the map to png but only to html. This is a static image for visalization purpose
-Image(filename = 'mapp3_screenshot.png', width=600, height=600)
+#Image(filename = 'mapp3_screenshot.png', width=600, height=600)
 ```
 
 
 
 
-![png](Graphs_Alberghi_LGV_files/Graphs_Alberghi_LGV_9_0.png)
+<img src="mapp3_screenshot.png" width=500/>
 
 
 
@@ -174,7 +174,7 @@ plt.show()
 ```
 
 
-![png](Graphs_Alberghi_LGV_files/Graphs_Alberghi_LGV_11_0.png)
+<img src="Graphs_Alberghi_LGV_11_0.png" width=500/>
 
 
 ### Model Interpretation
@@ -206,12 +206,9 @@ sns.barplot(feature_importance['Features'].head(10) , feature_importance['Import
             palette='coolwarm');
 ```
 
-    /Users/lorenzogessner/anaconda3/lib/python3.6/site-packages/sklearn/ensemble/forest.py:246: FutureWarning: The default value of n_estimators will change from 10 in version 0.20 to 100 in 0.22.
-      "10 in version 0.20 to 100 in 0.22.", FutureWarning)
 
 
-
-![png](Graphs_Alberghi_LGV_files/Graphs_Alberghi_LGV_15_1.png)
+<img src="Graphs_Alberghi_LGV_15_1.png" width=600 height=300/>
 
 
 
@@ -220,7 +217,7 @@ sns.barplot(feature_importance['Features'].head(10) , feature_importance['Import
 model = XGBClassifier(n_estimators=160, max_depth=5)
 model.fit(X, Y)
 
-# find the relative importance of each attribute
+#find the relative importance of each attribute
 feature_scores = model.feature_importances_
 
 #creates a dataframe to combine feature names and importance score
@@ -233,7 +230,7 @@ sns.barplot(feature_importance['Features'].head(10) , feature_importance['Import
 ```
 
 
-![png](Graphs_Alberghi_LGV_files/Graphs_Alberghi_LGV_16_0.png)
+<img src="Graphs_Alberghi_LGV_16_0.png" width=600 height=300/>
 
 
 
@@ -242,7 +239,7 @@ sns.barplot(feature_importance['Features'].head(10) , feature_importance['Import
 
 model_limited = RandomForestClassifier(max_depth=3)
 model_limited.fit(X, Y)
-print(model_limited.score(X,Y))
+#print(model_limited.score(X,Y))
 
 
 estimator = model_limited.estimators_[0] #index picks which tree to print
@@ -255,20 +252,10 @@ export_graphviz(estimator, out_file='tree.dot',
 
 
 # Convert to png 
-call(['dot', '-Tpng', 'tree.dot', '-o' 'tree.png', '-Gdpi=600'])
-Image(filename = 'tree.png')
+#call(['dot', '-Tpng', 'tree.dot', '-o' 'tree.png', '-Gdpi=600'])
+#Image(filename = 'tree.png')
 ```
 
-    /Users/lorenzogessner/anaconda3/lib/python3.6/site-packages/sklearn/ensemble/forest.py:246: FutureWarning: The default value of n_estimators will change from 10 in version 0.20 to 100 in 0.22.
-      "10 in version 0.20 to 100 in 0.22.", FutureWarning)
 
-
-    0.7774169741697416
-
-
-
-
-
-![png](Graphs_Alberghi_LGV_files/Graphs_Alberghi_LGV_17_2.png)
-
+<img src="Graphs_Alberghi_LGV_17_2.png" width=600 height=300/>
 
