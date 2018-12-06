@@ -1,7 +1,7 @@
 
 ## Class prediction of lodging structures in Lombardy
 
-Our model aims to predict the type of lodging facilities located in Lombardy; a region of Italy. This is an example of a supervised classification problem where there are 5 different classes to predict: `B&B`, `Case_Appartamenti` , `1_a_3_Stelle` , `4_a_5_Stelle` , `Campeggio` and a mix of numerical and categorical data to do so. 
+This model aims to predict the type of lodging facilities located in Lombardy; a region of Italy. This is an example of a supervised classification problem where there are 5 different classes to predict: `B&B`, `Case_Appartamenti` , `1_a_3_Stelle` , `4_a_5_Stelle` , `Campeggio` and a mix of numerical and categorical data to do so. 
 <br>
 >- `ID`: Index
 >- `PROVINCIA`: Letter code of the county capital 
@@ -75,7 +75,7 @@ __OUTPUT__: Classes where converted to numeric on a scale 1:5. `output = {'Case_
 
 ### External Data
 
-To improve the predictive power of my model I used an external dataset which includes demographic and geographic data of every city in Italy in 2017. The dataset was collected from ISTAT and it is available on http://ckan.ancitel.it/dataset/. From this dataset I used only 5 features: 
+To improve the predictive power of the model I used an external dataset which includes demographic and geographic data of every city in Italy in 2017. The dataset was collected from ISTAT and it is available on http://ckan.ancitel.it/dataset/. From this dataset I used only 5 features: 
 <br>
 >- `ZonaClimatica`: Climate 
 
@@ -83,9 +83,9 @@ To improve the predictive power of my model I used an external dataset which inc
 
 >- `AltezzaCentro`: Altitude 
 
->- `TipoComune`: County capital 
+>- `TipoComune`: County capital [0,1]
 
->- `GradoUrbaniz`: Urban level 
+>- `GradoUrbaniz`: Urban level [Alto, Medio, Basso]
 
 <br>
 The final dataset has a shape of 6775 rows and 80 columns
