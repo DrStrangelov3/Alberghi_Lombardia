@@ -53,7 +53,7 @@ __COMUNE__: I also dropped this column, but it was used as key to merge external
 
 __LOCALITA__: As most of this feature is composed by `NaN`, I transformed it to a dummy variable on whether the data was present or not. This feature could be significant to discriminate if a structure is in a rural area. `data['LOCALITA'].apply(lambda x: 0 if pd.isnull(x) else 1)`
 
-__CAMERE__, __SUITE__, __LETTI__, __BAGNI__, __PRIMA_COLAZIONE__: Those features where left untouched as there was no missing value.
+__CAMERE__, __SUITE__, __LETTI__, __BAGNI__, __PRIMA_COLAZIONE__: Those features were left untouched as there was no missing value.
 
 __IN_ABITATO__, __SUL_LAGO__, __VICINO_AEREOPORTO__, __ZONA_CENTRALE__, __VICINO_IMP_RISALITA__, __ZONA_PERIFERICA__, __ZONA_STAZIONE_FS__: The same approach was used on all those features as they are missing the same 107 entries. All, except one, belong to `Case_Appartamenti`. My idea is that a home owner is less likely to fill the facility's characteristics field. This seems to follow a pattern for this category across the dataset. My solution is to fill `NaN` with 0. `data['ZONA_PERIFERICA'].fillna(0, inplace=True)`
 
