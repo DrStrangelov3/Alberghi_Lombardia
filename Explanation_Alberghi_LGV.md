@@ -75,7 +75,7 @@ __OUTPUT__: Classes where converted to numeric on a scale 1:5. `output = {'Case_
 
 ### External Data
 
-To improve the predictive power of the model I used an external dataset which includes demographic and geographic data of every city in Italy in 2017. The dataset was collected from ISTAT and it is available on http://ckan.ancitel.it/dataset/. From this dataset I used only 5 features: 
+To improve the predictive power of the model I used an external dataset which includes demographic and geographic data of every city in Italy in 2017. The data were collected by ISTAT and it is available on http://ckan.ancitel.it/dataset/. From this dataset I used only 5 features: 
 <br>
 >- `ZonaClimatica`: Climate 
 
