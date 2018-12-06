@@ -99,12 +99,12 @@ The models selected are meant to overcome the last two challenges: classes imbal
 
 #### Preprocessing
 
-While our models mostly bypass our challenges of classes imbalance and feature pruning, I tried applying some dimensionality reductions techniques. First I rescaled the dataset with `MinMaxScaler()`. I also tried to apply `PCA()` it didn't provide any significant score improvement. Because of this, I commented this part of code out to mantain features interpretability.
+While our models mostly bypass our challenges of classes imbalance and feature pruning, I tried applying some dimensionality reductions techniques. First I rescaled the dataset with `MinMaxScaler()`. I also tried to apply `PCA()` but it didn't provide any significant score improvement. Because of this, I commented this part of code out to mantain features interpretability.
 Last I tried a recursive feature elimination method `RFECV()` which only slightly improved my best accuracy score.
 
 #### Overfitting prevention
 
-Since the models selected are prone to overfit, it is essential to find a way to counter it. Therefore, I splitted the data into a train and a test set `train_test_split(X_scaled, Y, test_size=0.25, random_state=42)` this way I can train my model on 75% of my data and then test it on the remaining 25%. Also, while fitting the model I applied a 5 folds Cross Validation which increases the computational intensity but prevents overfitting. The last confirmation that my models did not overfit is that my cv `best_score_`  and my `accuracy_score` on the test set are extremely close. 
+Since the models selected are prone to overfit, it is essential to find a way to counter it. Therefore, I splitted the data into a train and a test set `train_test_split(X_scaled, Y, test_size=0.25, random_state=42)` this way I can train the model on 75% of my data and then test it on the remaining 25%. Also, while fitting the model I applied a 5 folds Cross Validation which increases the computational intensity but prevents overfitting. The last confirmation that my models did not overfit is that my cv `best_score_`  and my `accuracy_score` on the test set are extremely close. 
 
 #### Hyperparameter optimization
 
@@ -118,7 +118,7 @@ Overall both model performed above expectations. On the test set:
 
 >- `XGBClassifier()` has an `accuracy_score` = __0.9114__ 
 
-By looking at the confusion matrix of the models, they have similarl performance. The biggest obstacle seems to be the misclassification between `Case_Appartamenti` and `B&B` and vice versa. Also the models seem to misclassify `4_a_5_Stelle` into `1_a_3_Stelle`. These errors are understandable as characteristics are very similar. Overall, the model is able to accurately distinguish between the macro classes of hotels and non-hotels.
+By looking at the confusion matrix of the models, they have similar performances. The biggest obstacle seems to be the misclassification between `Case_Appartamenti` and `B&B` and vice versa. Also the models seem to misclassify `4_a_5_Stelle` into `1_a_3_Stelle`. These errors are understandable as characteristics are very similar. Overall, the model is able to accurately distinguish between the macro classes of hotels and non-hotels.
 
 #### Future improvments
 
