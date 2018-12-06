@@ -67,7 +67,7 @@ __LINGUE_PARLATE__: In this case, I assumed that business driven facilities such
 
 __SPORT__: My approach to this feature has been similar to the one used for ATTREZZATURE_VARIE. However, in this case, I grouped together similar sports and discarded the rest. I combined sports with a field, summer sports, winter sports, indoor sports and swimming pool (combining indoor and outdoor). I kept the gym feature `['Fitness/centro salute']` as is. Those were made into dummies and merged to the original dataset. 
 
-__CONGRESSI__: This feature, when present, is a string of text including the number of convention halls, min capacity and max capacity. The beast option would have been to extract the max capacity, but a few entries were missing this data. I opted to extract only the number of halls which was available for all non-`NaN` values. The rest was filled with 0. This was done with a simple regex `data['CONGRESSI'].fillna('0').apply(lambda x: re.search(r'(\d+){1}', x)[0]).astype(int)
+__CONGRESSI__: This feature, when present, is a string of text including the number of convention halls, min capacity and max capacity. The beast option would have been to extract the max capacity, but a few entries were missing this data. I opted to extract only the number of halls which was available for all non-`NaN` values. The rest was filled with 0. This was done with a simple regex `data['CONGRESSI'].fillna('0').apply(lambda x: re.search(r'(\d+){1}', x)[0]).astype(int)`
 
 __LATITUDINE__, __LONGITUDINE__: Those features were only used for plotting.
 
