@@ -59,13 +59,13 @@ mapp.get_root().html.add_child(folium.Element(legend_html))
 
 ```python
 #folium does not allow to convert the map to png but only to html. This is a static image for visalization purpose
-Image(filename = 'mapp1_screenshot.png', width=600, height=600)
+#Image(filename = 'mapp1_screenshot.png', width=600, height=600)
 ```
 
 
 
 
-![png](Graphs_Alberghi_LGV_files/Graphs_Alberghi_LGV_5_0.png)
+<img src="mapp1_screenshot.png" width=500/>
 
 
 
@@ -99,13 +99,13 @@ mapp2.get_root().html.add_child(folium.Element(legend_html))
 
 ```python
 #folium does not allow to convert the map to png but only to html. This is a static image for visalization purpose
-Image(filename = 'mapp2_screenshot.png', width=600, height=600)
+#Image(filename = 'mapp2_screenshot.png', width=600, height=600)
 ```
 
 
 
 
-![png](Graphs_Alberghi_LGV_files/Graphs_Alberghi_LGV_7_0.png)
+<img src="mapp2_screenshot.png" width=500/>
 
 
 
