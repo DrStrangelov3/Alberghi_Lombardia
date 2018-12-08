@@ -94,7 +94,7 @@ The final dataset has a shape of 6775 rows and 80 columns
 
 #### Model selection
 
-The models selected are meant to overcome the last two challenges: classes imbalance and features elimination. The simplest models to apply in our situation, without rebalancing our classes, are decision trees and therefore: ensemble methods. For our dataset I decided to use a bagging and a boosting ensemble; RandomForestClassifier and XGBClassifier. 
+The models selected are meant to overcome the last two challenges: classes imbalance and features elimination. The simplest models to apply in our situation, without rebalancing our classes, are decision trees and therefore ensemble methods. For our dataset I decided to use a bagging and a boosting ensemble; RandomForestClassifier and XGBClassifier. 
 
 
 #### Preprocessing
